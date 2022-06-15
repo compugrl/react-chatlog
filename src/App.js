@@ -8,7 +8,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>
-          Chat Between {chatMessages.sender} and {chatMessages.sender}
+          Chat Between {chatMessages[0].sender} and {chatMessages[1].sender}
         </h1>
       </header>
       <main>
