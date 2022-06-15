@@ -3,13 +3,15 @@ import './ChatLog.css';
 import ChatEntry from './ChatEntry';
 
 const ChatLog = (props) => {
-  const chatEntries = props.entries.map((entry, index) => {
+  const chatEntries = props.entries.map((entry) => {
     return (
-      <li key={index}>
+      <li className="chat-log">
         <ChatEntry
+          id={entry.id}
           sender={entry.sender}
           timestamp={entry.timestamp}
           body={entry.body}
+          likes={entry.likes}
         ></ChatEntry>
       </li>
     );
