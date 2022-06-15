@@ -3,8 +3,6 @@ import './ChatEntry.css';
 import TimeStamp from '../components/TimeStamp';
 
 const ChatEntry = (props) => {
-  console.log(`Props: ${props}`);
-
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{props.sender}</h2>
