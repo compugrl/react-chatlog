@@ -1,24 +1,42 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ChatEntry.css';
 import TimeStamp from '../components/TimeStamp';
 import PropTypes from 'prop-types';
+// import { useState } from 'react';
 
 const ChatEntry = (props) => {
-  const [isLiked, setIsLiked] = useState(false);
-  const heartType = isLiked ? '❤️' : '🤍';
-  const toggleLiked = () => {
-    setIsLiked(!isLiked);
+  const onLikedButtonClick = () => {
+    const updatedLike = {
+      id: props.id,
+      sender: props.sender,
+      timeStamp: props.timeStamp,
+      body: props.body,
+      liked: !props.liked,
+    };
+
+    props.onUpdate(updatedLike);
   };
 
+  const heartType = props.liked ? '❤️' : '🤍';
+
+  let idVal = false;
+  if (props.id % 2 === 0) {
+    idVal = false;
+  } else {
+    idVal = true;
+  }
+
+  const env = idVal ? 'local' : 'remote';
+
   return (
-    <div className="chat-entry local">
+    <div className={`chat-entry ${env}`}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time">
           <TimeStamp time={props.timeStamp}></TimeStamp>
         </p>
-        <button onClick={toggleLiked} className="like">
+        <button onClick={onLikedButtonClick} className="like">
           {heartType}
         </button>
       </section>
@@ -31,7 +49,8 @@ ChatEntry.propTypes = {
   sender: PropTypes.number.isRequired,
   body: PropTypes.number.isRequired,
   timeStamp: PropTypes.number.isRequired,
-  liked: PropTypes.string.isRequired,
+  liked: PropTypes.bool.isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };
 
 export default ChatEntry;
