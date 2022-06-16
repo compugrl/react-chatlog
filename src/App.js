@@ -16,6 +16,8 @@ const App = () => {
       if (sender !== firstUser) {
         headerData = headerData + ` and ${sender}`;
       }
+
+      return headerData;
     });
   };
 
@@ -54,7 +56,9 @@ const App = () => {
     <div id="App">
       <header>
         <h1>{headerData}</h1>
-        <p>{likedNum} ❤️s</p>
+        <p className="widget" id="heartWidget">
+          {likedNum} ❤️s
+        </p>
       </header>
       <main>
         <ChatLog entries={chatData} onUpdateLiked={updateLikedData}></ChatLog>
