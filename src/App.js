@@ -12,7 +12,7 @@ const App = () => {
     const firstUser = uniqueSenders[0];
 
     headerData = headerData + `${firstUser}`;
-    const senders = uniqueSenders.map((sender) => {
+    uniqueSenders.map((sender) => {
       if (sender !== firstUser) {
         headerData = headerData + ` and ${sender}`;
       }

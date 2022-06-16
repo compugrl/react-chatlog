@@ -46,9 +46,9 @@ const ChatEntry = (props) => {
 
 ChatEntry.propTypes = {
   id: PropTypes.number.isRequired,
-  sender: PropTypes.number.isRequired,
-  body: PropTypes.number.isRequired,
-  timeStamp: PropTypes.number.isRequired,
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
   onUpdate: PropTypes.func.isRequired,
 };

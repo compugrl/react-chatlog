@@ -31,9 +31,9 @@ ChatLog.propTypes = {
   entries: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      sender: PropTypes.number.isRequired,
-      body: PropTypes.number.isRequired,
-      timeStamp: PropTypes.number.isRequired,
+      sender: PropTypes.string.isRequired,
+      body: PropTypes.string.isRequired,
+      timeStamp: PropTypes.string.isRequired,
       liked: PropTypes.bool.isRequired,
     })
   ),
