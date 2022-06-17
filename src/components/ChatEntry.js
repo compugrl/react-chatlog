@@ -2,7 +2,6 @@ import React from 'react';
 import './ChatEntry.css';
 import TimeStamp from '../components/TimeStamp';
 import PropTypes from 'prop-types';
-// import { useState } from 'react';
 
 const ChatEntry = (props) => {
   const onLikedButtonClick = () => {
