@@ -6,9 +6,8 @@ import PropTypes from 'prop-types';
 const ChatLog = (props) => {
   const chatEntries = props.entries.map((entry) => {
     return (
-      <li className="chat-log">
+      <li className="chat-log" key={entry.id}>
         <ChatEntry
-          key={entry.id}
           id={entry.id}
           sender={entry.sender}
           timeStamp={entry.timeStamp}
